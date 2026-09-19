@@ -53,7 +53,7 @@ if(isset($_POST['update_qty'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <!-- Custom CSS -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 
 </head>
 <body>
@@ -221,7 +221,7 @@ if(isset($_POST['update_qty'])){
 
 <?php include 'components/footer.php'; ?>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=<?php echo time(); ?>"></script>
 
 </body>
 </html>

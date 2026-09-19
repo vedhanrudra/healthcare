@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 
 </head>
 <body>
@@ -145,7 +145,7 @@ if(isset($_POST['submit'])){
 
 <?php include 'components/footer.php'; ?>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=<?php echo time(); ?>"></script>
 
 </body>
 </html>

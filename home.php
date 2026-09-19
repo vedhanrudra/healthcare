@@ -34,7 +34,7 @@ include 'components/wishlist_cart.php';
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <!-- Custom Modern CSS -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 
 </head>
 <body>
@@ -393,7 +393,7 @@ include 'components/wishlist_cart.php';
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 <!-- Custom JS -->
-<script src="js/script.js"></script>
+<script src="js/script.js?v=<?php echo time(); ?>"></script>
 
 <script>
 // Initialize Modern Hero Swiper
