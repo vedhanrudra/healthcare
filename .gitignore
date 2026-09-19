@@ -1,0 +1,49 @@
+# Operating System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor & IDE directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary & Log files
+*.log
+scratch/
+tmp/
+temp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Web server caches
+.htaccess.bak
+
+# Image and media directories (all images excluded)
+images/
+uploaded_img/
+project images/
+
+# All image formats across the entire repository
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.svg
+*.avif
+*.bmp
+*.ico
+*.tiff
+*.tif
+*.psd
+*.ai
+*.eps
+*.raw
+*.crdownload
