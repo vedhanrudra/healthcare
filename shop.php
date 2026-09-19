@@ -103,15 +103,11 @@ include 'components/wishlist_cart.php';
 
          <!-- Trust Card -->
          <div class="filter-card trust-promo-card">
-            <div class="promo-badge"><i class="fas fa-shield-check"></i> 100% Genuine</div>
-            <h4>Certified Quality</h4>
-            <p>All items in this catalog are sourced directly from verified and licensed manufacturers.</p>
-            <div class="phone-support">
-               <i class="fas fa-phone-volume"></i>
-               <div>
-                  <span>Prescription Help</span>
-                  <strong>+91 9313945584</strong>
-               </div>
+            <div class="promo-badge"><i class="fas fa-shield-check"></i> Quality Guaranteed</div>
+            <h4>Genuine Medicines</h4>
+            <p>All items in this catalog are verified and sourced from licensed pharmaceutical distributors.</p>
+            <div style="margin-top: 1.2rem;">
+               <a href="contact.php" class="btn btn-secondary-white btn-block btn-sm"><i class="fas fa-envelope"></i> Have Questions?</a>
             </div>
          </div>
 
@@ -132,8 +128,8 @@ include 'components/wishlist_cart.php';
                <span class="product-count-chip">Showing <?= $total_prods; ?> items</span>
             </div>
             <div class="toolbar-badges">
-               <span class="badge-chip"><i class="fas fa-truck-fast"></i> 2-Hour Delivery</span>
-               <span class="badge-chip"><i class="fas fa-shield-halved"></i> Genuine Meds</span>
+               <span class="badge-chip"><i class="fas fa-truck"></i> Doorstep Delivery</span>
+               <span class="badge-chip"><i class="fas fa-shield-halved"></i> Genuine Products</span>
             </div>
          </div>
 

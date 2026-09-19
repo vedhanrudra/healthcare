@@ -177,35 +177,14 @@ $pid = isset($_GET['pid']) ? $_GET['pid'] : '';
 
       </div>
 
-      <!-- Information Tabs / Sections -->
+      <!-- Product Information / Details Card -->
       <div class="product-info-tabs">
-         
          <div class="tab-card">
-            <h3 class="tab-title"><i class="fas fa-file-lines"></i> Product Description & Details</h3>
+            <h3 class="tab-title"><i class="fas fa-file-lines"></i> Product Information & Description</h3>
             <div class="tab-content">
                <p><?= nl2br(htmlspecialchars($fetch_product['details'])); ?></p>
             </div>
          </div>
-
-         <div class="tab-card">
-            <h3 class="tab-title"><i class="fas fa-clipboard-check"></i> Directions & Dosage Instructions</h3>
-            <div class="tab-content">
-               <p>Use strictly according to your registered medical practitioner's prescription or the package dosage instructions. Swallow whole with water. Do not exceed the prescribed daily dose.</p>
-            </div>
-         </div>
-
-         <div class="tab-card">
-            <h3 class="tab-title"><i class="fas fa-triangle-exclamation"></i> Safety Information & Storage</h3>
-            <div class="tab-content">
-               <ul class="safety-list">
-                  <li>Store in a cool, dry place away from direct sunlight (below 25°C).</li>
-                  <li>Keep strictly out of reach of children.</li>
-                  <li>Do not consume if the tamper-evident protective seal is damaged or missing.</li>
-                  <li>Consult a licensed physician or pharmacist if pregnant, nursing, or undergoing concurrent treatment.</li>
-               </ul>
-            </div>
-         </div>
-
       </div>
 
    </form>

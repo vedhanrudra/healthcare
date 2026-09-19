@@ -18,10 +18,10 @@
             </div>
          </div>
          <div class="trust-card">
-            <div class="trust-icon"><i class="fas fa-user-doctor"></i></div>
+            <div class="trust-icon"><i class="fas fa-headset"></i></div>
             <div class="trust-content">
-               <h4>Expert Pharmacist Support</h4>
-               <p>Professional guidance on prescriptions & daily dosages</p>
+               <h4>Customer Support</h4>
+               <p>Helpful assistance with your healthcare orders & questions</p>
             </div>
          </div>
          <div class="trust-card">
@@ -108,7 +108,7 @@
          <!-- Column 5: Social & Security -->
          <div class="footer-col">
             <h3 class="col-title">Connect With Us</h3>
-            <p class="social-sub">Chat directly with our pharmacists on WhatsApp or follow us for health updates:</p>
+            <p class="social-sub">Follow us for health updates and customer inquiries:</p>
             <div class="footer-socials">
                <a href="https://api.whatsapp.com/send?phone=919265781915" target="_blank" class="social-btn whatsapp" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                <a href="#" class="social-btn instagram" title="Follow on Instagram"><i class="fab fa-instagram"></i></a>

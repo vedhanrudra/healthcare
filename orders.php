@@ -76,28 +76,14 @@ if(isset($_SESSION['user_id'])){
          </div>
       </div>
 
-      <!-- 4-Step Visual Progress Tracker -->
-      <div class="order-tracker-wrap">
-         <div class="tracker-steps">
-            <div class="t-step active">
-               <div class="t-icon"><i class="fas fa-clipboard-check"></i></div>
-               <span class="t-label">Order Placed</span>
-            </div>
-            <div class="t-line active"></div>
-            <div class="t-step active">
-               <div class="t-icon"><i class="fas fa-check-double"></i></div>
-               <span class="t-label">Confirmed</span>
-            </div>
-            <div class="t-line <?= $is_completed ? 'active' : ''; ?>"></div>
-            <div class="t-step <?= $is_completed ? 'active' : ''; ?>">
-               <div class="t-icon"><i class="fas fa-truck-fast"></i></div>
-               <span class="t-label">Dispatched</span>
-            </div>
-            <div class="t-line <?= $is_completed ? 'active' : ''; ?>"></div>
-            <div class="t-step <?= $is_completed ? 'active' : ''; ?>">
-               <div class="t-icon"><i class="fas fa-house-chimney"></i></div>
-               <span class="t-label">Delivered</span>
-            </div>
+      <!-- Authentic Status Summary Bar -->
+      <div class="order-status-strip <?= $is_completed ? 'status-strip-completed' : 'status-strip-pending'; ?>">
+         <div class="status-strip-icon">
+            <i class="fas <?= $is_completed ? 'fa-circle-check' : 'fa-hourglass-half'; ?>"></i>
+         </div>
+         <div class="status-strip-text">
+            <strong>Order Status: <?= $is_completed ? 'Completed & Confirmed' : 'Pending Verification'; ?></strong>
+            <span><?= $is_completed ? 'Your payment and order have been processed successfully by the dispensary.' : 'Your order has been received and is awaiting dispensary verification.'; ?></span>
          </div>
       </div>
 

@@ -84,10 +84,10 @@ include 'components/wishlist_cart.php';
                   <p class="hero-description">
                      Access certified pharmaceuticals, vitamins, and healthcare essentials sourced directly from licensed global manufacturers.
                   </p>
-                  <div class="hero-actions">
-                     <a href="category.php?category=medicine" class="btn btn-primary"><i class="fas fa-capsules"></i> Browse Medicines</a>
-                     <a href="contact.php" class="btn btn-outline-primary"><i class="fas fa-user-doctor"></i> Talk to Pharmacist</a>
-                  </div>
+                   <div class="hero-actions">
+                      <a href="category.php?category=medicine" class="btn btn-primary"><i class="fas fa-capsules"></i> Browse Medicines</a>
+                      <a href="contact.php" class="btn btn-outline-primary"><i class="fas fa-envelope"></i> Contact Support</a>
+                   </div>
                   <div class="hero-perks">
                      <span><i class="fas fa-check-circle"></i> Temperature Controlled</span>
                      <span><i class="fas fa-check-circle"></i> Batch Verified</span>
@@ -331,15 +331,15 @@ include 'components/wishlist_cart.php';
       <div class="promo-highlights">
          <div class="promo-stat">
             <span class="stat-num">100%</span>
-            <span class="stat-label">Certified Authentic</span>
+            <span class="stat-label">Authentic Products</span>
          </div>
          <div class="promo-stat">
-            <span class="stat-num">2-Hour</span>
-            <span class="stat-label">Express Delivery</span>
+            <span class="stat-num">Verified</span>
+            <span class="stat-label">Quality Standards</span>
          </div>
          <div class="promo-stat">
-            <span class="stat-num">50k+</span>
-            <span class="stat-label">Satisfied Patients</span>
+            <span class="stat-num">Secure</span>
+            <span class="stat-label">Order Handling</span>
          </div>
       </div>
    </div>
@@ -348,41 +348,31 @@ include 'components/wishlist_cart.php';
 <!-- 6. Why Choose HealthCareRx Section -->
 <section class="why-us-section">
    <div class="section-header center">
-      <span class="section-tag"><i class="fas fa-circle-check"></i> The HealthCareRx Advantage</span>
+      <span class="section-tag"><i class="fas fa-circle-check"></i> Quality & Trust</span>
       <h2 class="section-title">Why Choose HealthCareRx?</h2>
-      <p class="section-subtitle">We are committed to providing safe, reliable, and authentic healthcare for you and your family.</p>
+      <p class="section-subtitle">A safe, simple, and reliable online pharmacy platform for your healthcare essentials.</p>
    </div>
 
    <div class="why-us-grid">
       <div class="why-card">
          <div class="why-icon"><i class="fas fa-certificate"></i></div>
          <h4>Genuine Medicines</h4>
-         <p>Every product is 100% genuine, directly sourced from licensed and audited pharmaceutical distributors.</p>
+         <p>Every product in our catalog is verified and sourced from authorized pharmaceutical distributors.</p>
       </div>
       <div class="why-card">
          <div class="why-icon"><i class="fas fa-truck-medical"></i></div>
-         <h4>Fast & Safe Delivery</h4>
-         <p>Sealed temperature-controlled packaging ensures medicines maintain maximum clinical efficacy.</p>
-      </div>
-      <div class="why-card">
-         <div class="why-icon"><i class="fas fa-user-doctor"></i></div>
-         <h4>Licensed Pharmacists</h4>
-         <p>Qualified pharmacists review and dispense your orders with accurate dosage and prescription guidance.</p>
+         <h4>Doorstep Delivery</h4>
+         <p>Clean and careful packaging ensures medicines reach your doorstep in optimal condition.</p>
       </div>
       <div class="why-card">
          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
          <h4>Secure Payments</h4>
-         <p>Multiple safe payment options including UPI, credit/debit cards, net banking, and Cash on Delivery.</p>
+         <p>Flexible and safe checkout with Cash on Delivery, credit/debit card, and UPI payment support.</p>
       </div>
       <div class="why-card">
-         <div class="why-icon"><i class="fas fa-clock-rotate-left"></i></div>
-         <h4>Easy Repeat Refills</h4>
-         <p>Reorder your chronic maintenance medicines effortlessly in a single click through your patient dashboard.</p>
-      </div>
-      <div class="why-card">
-         <div class="why-icon"><i class="fas fa-rotate-left"></i></div>
-         <h4>Hassle-Free Returns</h4>
-         <p>Transparent return and refund policies designed to give you complete peace of mind.</p>
+         <div class="why-icon"><i class="fas fa-headset"></i></div>
+         <h4>Customer Support</h4>
+         <p>Dedicated support team ready to assist with any product questions or order inquiries.</p>
       </div>
    </div>
 </section>

@@ -19,24 +19,19 @@
    <div class="top-bar-inner">
       <div class="top-bar-left">
          <span class="utility-item">
-            <i class="fas fa-truck-fast"></i>
-            <span><strong>Free Delivery</strong> on orders over ₹499</span>
+            <i class="fas fa-pills"></i>
+            <span>Online Pharmacy & Healthcare Store</span>
          </span>
          <span class="utility-divider">|</span>
          <span class="utility-item hide-mobile">
             <i class="fas fa-shield-halved"></i>
-            <span>100% Genuine Medicines</span>
+            <span>Verified Healthcare Products</span>
          </span>
       </div>
       <div class="top-bar-right">
-         <span class="utility-item hide-mobile">
-            <i class="fas fa-location-dot"></i>
-            <span>Deliver to: <strong>Surat, Gujarat</strong></span>
-         </span>
-         <span class="utility-divider hide-mobile">|</span>
-         <a href="tel:+919313945584" class="utility-item">
-            <i class="fas fa-headset"></i>
-            <span>Pharmacist Support: <strong>+91 9313945584</strong></span>
+         <a href="contact.php" class="utility-item">
+            <i class="fas fa-envelope"></i>
+            <span>Customer Support & Inquiries</span>
          </a>
       </div>
    </div>
@@ -196,9 +191,6 @@
             <li><a href="orders.php" class="nav-item"><i class="fas fa-receipt"></i> Orders</a></li>
             <li><a href="contact.php" class="nav-item"><i class="fas fa-headset"></i> Contact</a></li>
          </ul>
-         <div class="nav-badge hide-mobile">
-            <i class="fas fa-clock-rotate-left"></i> 2-Hour Express Delivery Available
-         </div>
       </div>
    </nav>
 
