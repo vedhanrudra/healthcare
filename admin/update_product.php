@@ -94,7 +94,7 @@ if(isset($_POST['update'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>update product</title>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <link rel="stylesheet" href="../css/admin_style.css?v=<?php echo time(); ?>">
 
@@ -108,7 +108,7 @@ if(isset($_POST['update'])){
 
    <section class="update-product">
 
-      <h1 class="heading">update product</h1>
+      <h1 class="heading"><i class="fas fa-pen-to-square"></i> Update Medicine Details</h1>
 
       <?php
          $update_id = $_GET['update'];
@@ -122,44 +122,53 @@ if(isset($_POST['update'])){
          <input type="hidden" name="old_image_01" value="<?= $fetch_products['image_01']; ?>">
          <input type="hidden" name="old_image_02" value="<?= $fetch_products['image_02']; ?>">
          <input type="hidden" name="old_image_03" value="<?= $fetch_products['image_03']; ?>">
+         
          <div class="image-container">
             <div class="main-image">
                <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
             </div>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 0.6rem;">Click thumbnail below to preview:</p>
             <div class="sub-image">
-               <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
-               <img src="../uploaded_img/<?= $fetch_products['image_02']; ?>" alt="">
-               <img src="../uploaded_img/<?= $fetch_products['image_03']; ?>" alt="">
+               <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="Primary Image">
+               <img src="../uploaded_img/<?= $fetch_products['image_02']; ?>" alt="Secondary Image">
+               <img src="../uploaded_img/<?= $fetch_products['image_03']; ?>" alt="Detail Image">
             </div>
          </div>
-         <span>update name</span>
-         <input type="text" name="name" required class="box" maxlength="100" placeholder="enter product name" value="<?= $fetch_products['name']; ?>">
-         <span>update price</span>
-         <input type="number" name="price" required class="box" min="0" max="9999999999" placeholder="enter product price" onkeypress="if(this.value.length == 10) return false;" value="<?= $fetch_products['price']; ?>">
-         <span>update details</span>
-         <textarea name="details" class="box" required cols="30" rows="10"><?= $fetch_products['details']; ?></textarea>
-         <span>update image 01</span>
+
+         <span>Medicine Name (required)</span>
+         <input type="text" name="name" required class="box" maxlength="100" placeholder="Enter medicine name" value="<?= htmlspecialchars($fetch_products['name']); ?>">
+         
+         <span>Price in ₹ (required)</span>
+         <input type="number" name="price" required class="box" min="0" max="9999999999" placeholder="Enter product price" onkeypress="if(this.value.length == 10) return false;" value="<?= $fetch_products['price']; ?>">
+         
+         <span>Product Description & Indications (required)</span>
+         <textarea name="details" class="box" required cols="30" rows="10"><?= htmlspecialchars($fetch_products['details']); ?></textarea>
+         
+         <span>Replace Image 01 (Optional)</span>
          <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
-         <span>update image 02</span>
+         
+         <span>Replace Image 02 (Optional)</span>
          <input type="file" name="image_02" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
-         <span>update image 03</span>
+         
+         <span>Replace Image 03 (Optional)</span>
          <input type="file" name="image_03" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
+         
          <div class="flex-btn">
-            <input type="submit" name="update" class="btn" value="update">
-            <a href="products.php" class="option-btn">go back</a>
+            <input type="submit" name="update" class="btn btn-primary" value="Save Changes">
+            <a href="products.php" class="option-btn"><i class="fas fa-arrow-left"></i> Back to Inventory</a>
          </div>
       </form>
       
       <?php
             }
          }else{
-            echo '<p class="empty">no product found!</p>';
+            echo '<p class="empty"><i class="fas fa-triangle-exclamation"></i> No product found with this ID!</p>';
          }
       ?>
 
    </section>
 </div>
-<script src="../js/admin_script.js"></script>
+<script src="../js/admin_script.js?v=<?php echo time(); ?>"></script>
    
 </body>
 </html>

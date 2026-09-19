@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>update profile</title>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <link rel="stylesheet" href="../css/admin_style.css?v=<?php echo time(); ?>">
 
@@ -66,23 +66,61 @@ if(isset($_POST['submit'])){
 
 <div class="container-admin">
    <?php include '../components/left-menu.php'; ?>
-   <section class="form-container">
+   <section class="form-container" style="min-height: calc(100vh - 8rem);">
 
-      <form action="" method="post">
-         <h3>update profile</h3>
-         <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>">
-         <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-         <input type="password" name="old_pass" placeholder="enter old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-         <input type="password" name="new_pass" placeholder="enter new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-         <input type="password" name="confirm_pass" placeholder="confirm new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-         <input type="submit" value="update now" class="btn" name="submit">
-      </form>
+      <div class="admin-login-wrapper">
+         <form action="" method="post" class="admin-auth-card">
+            <div class="metric-icon-wrap icon-blue" style="margin: 0 auto 1.5rem auto;">
+               <i class="fas fa-user-gear"></i>
+            </div>
+            <h3>Update Admin Profile</h3>
+            <p style="text-align: center; color: var(--text-muted); font-size: 1.35rem; margin-bottom: 2rem;">Modify username or change access password</p>
+
+            <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>">
+
+            <div class="input-field-group">
+               <label for="prof-name">Username</label>
+               <div class="input-with-icon">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="prof-name" name="name" value="<?= htmlspecialchars($fetch_profile['name']); ?>" required placeholder="Enter username" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+               </div>
+            </div>
+
+            <div class="input-field-group">
+               <label for="prof-oldpass">Current Password</label>
+               <div class="input-with-icon">
+                  <i class="fas fa-key"></i>
+                  <input type="password" id="prof-oldpass" name="old_pass" placeholder="Enter current password" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+               </div>
+            </div>
+
+            <div class="input-field-group">
+               <label for="prof-newpass">New Password</label>
+               <div class="input-with-icon">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="prof-newpass" name="new_pass" placeholder="Enter new password (optional)" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+               </div>
+            </div>
+
+            <div class="input-field-group">
+               <label for="prof-cpass">Confirm New Password</label>
+               <div class="input-with-icon">
+                  <i class="fas fa-shield-check"></i>
+                  <input type="password" id="prof-cpass" name="confirm_pass" placeholder="Confirm new password" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+               </div>
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-primary btn-block">
+               <i class="fas fa-check"></i> Save Changes
+            </button>
+         </form>
+      </div>
 
    </section>
 
 </div>
 
-<script src="../js/admin_script.js"></script>
+<script src="../js/admin_script.js?v=<?php echo time(); ?>"></script>
    
 </body>
 </html>

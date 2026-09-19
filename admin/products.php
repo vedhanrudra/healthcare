@@ -104,78 +104,80 @@ if(isset($_GET['delete'])){
 <div class="container-admin">
    <?php include '../components/left-menu.php'; ?>
    
-   <section class="add-products">
+   <div class="admin-main-content" style="flex: 1; min-width: 0;">
+      <section class="add-products">
 
-      <h1 class="heading">Add Products</h1>
+         <h1 class="heading"><i class="fas fa-plus-circle"></i> Add New Medicine / Product</h1>
 
-      <form action="" method="post" enctype="multipart/form-data">
-         <div class="flex">
-            <div class="inputBox">
-               <span>product name (required)</span>
-               <input type="text" class="box" required maxlength="100" placeholder="enter product name" name="name">
+         <form action="" method="post" enctype="multipart/form-data">
+            <div class="flex">
+               <div class="inputBox">
+                  <span>Medicine Name (required)</span>
+                  <input type="text" class="box" required maxlength="100" placeholder="e.g. Paracetamol 500mg" name="name">
+               </div>
+               <div class="inputBox">
+                  <span>Price in ₹ (required)</span>
+                  <input type="number" min="0" class="box" required max="9999999999" placeholder="enter price" onkeypress="if(this.value.length == 10) return false;" name="price">
+               </div>
+               <div class="inputBox">
+                  <span>Primary Image (required)</span>
+                  <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+               </div>
+               <div class="inputBox">
+                  <span>Secondary Image (required)</span>
+                  <input type="file" name="image_02" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+               </div>
+               <div class="inputBox">
+                  <span>Package / Detail Image (required)</span>
+                  <input type="file" name="image_03" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+               </div>
+               <div class="inputBox">
+                  <span>Product Description & Composition (required)</span>
+                  <textarea name="details" placeholder="Enter medicine details, strength, or indications" class="box" required maxlength="500" cols="30" rows="10"></textarea>
+               </div>
             </div>
-            <div class="inputBox">
-               <span> price (required)</span>
-               <input type="number" min="0" class="box" required max="9999999999" placeholder="enter product price" onkeypress="if(this.value.length == 10) return false;" name="price">
+            
+            <input type="submit" value="Add Medicine to Catalog" class="btn btn-primary" name="add_product">
+         </form>
+
+      </section>
+
+      <section class="show-products">
+
+         <h1 class="heading"><i class="fas fa-boxes-stacked"></i> Current Product Inventory</h1>
+
+         <div class="box-container">
+
+         <?php
+            $select_products = $conn->prepare("SELECT * FROM `products`");
+            $select_products->execute();
+            if($select_products->rowCount() > 0){
+               while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
+         ?>
+         <div class="box">
+            <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
+            <div class="name"><?= htmlspecialchars($fetch_products['name']); ?></div>
+            <div class="price">₹<span><?= $fetch_products['price']; ?></span>/-</div>
+            <div class="details"><span><?= htmlspecialchars($fetch_products['details']); ?></span></div>
+            <div class="flex-btn">
+               <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn"><i class="fas fa-pen-to-square"></i> Edit</a>
+               <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Delete this medicine product?');"><i class="fas fa-trash-can"></i> Delete</a>
             </div>
-         <div class="inputBox">
-               <span>image 01 (required)</span>
-               <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
          </div>
-         <div class="inputBox">
-               <span>image 02 (required)</span>
-               <input type="file" name="image_02" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
-         </div>
-         <div class="inputBox">
-               <span>image 03 (required)</span>
-               <input type="file" name="image_03" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
-         </div>
-            <div class="inputBox">
-               <span>products details (required)</span>
-               <textarea name="details" placeholder="enter products details" class="box" required maxlength="500" cols="30" rows="10"></textarea>
-            </div>
-         </div>
-         
-         <input type="submit" value="add product" class="btn" name="add_product">
-      </form>
-
-   </section>
-
-   <section class="show-products">
-
-      <h1 class="heading">Products</h1>
-
-      <div class="box-container">
-
-      <?php
-         $select_products = $conn->prepare("SELECT * FROM `products`");
-         $select_products->execute();
-         if($select_products->rowCount() > 0){
-            while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
-      ?>
-      <div class="box">
-         <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
-         <div class="name"><?= $fetch_products['name']; ?></div>
-         <div class="price">Rs.<span><?= $fetch_products['price']; ?></span>/-</div>
-         <div class="details"><span><?= $fetch_products['details']; ?></span></div>
-         <div class="flex-btn">
-            <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
-            <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
-         </div>
-      </div>
-      <?php
+         <?php
+               }
+            }else{
+               echo '<p class="empty"><i class="fas fa-box-open"></i> No medicines added yet! Add your first product above.</p>';
             }
-         }else{
-            echo '<p class="empty">no products added yet!</p>';
-         }
-      ?>
-      
-      </div>
+         ?>
+         
+         </div>
 
-   </section>
+      </section>
+   </div>
 </div>
 
-<script src="../js/admin_script.js"></script>
+<script src="../js/admin_script.js?v=<?php echo time(); ?>"></script>
    
 </body>
 </html>

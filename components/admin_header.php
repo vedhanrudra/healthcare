@@ -3,8 +3,11 @@
       foreach($message as $message){
          echo '
          <div class="message">
-            <span>'.$message.'</span>
-            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+            <div class="msg-text">
+               <i class="fas fa-info-circle"></i>
+               <span>'.$message.'</span>
+            </div>
+            <i class="fas fa-times" onclick="this.parentElement.remove();" title="Dismiss"></i>
          </div>
          ';
       }
@@ -15,58 +18,58 @@
 
    <section class="flex">
 
-      <a href="../admin/dashboard.php" class="logo">Admin<span>Panel</span></a>
+      <div class="header-left">
+         <button id="menu-btn" class="header-icon-btn mobile-toggle" aria-label="Toggle Sidebar Menu">
+            <i class="fas fa-bars"></i>
+         </button>
+         <a href="../admin/dashboard.php" class="logo">
+            <span class="logo-mark"><i class="fas fa-plus"></i></span>
+            <span class="logo-text">HealthCare<span class="logo-accent">Rx</span></span>
+            <span class="admin-badge">Admin Panel</span>
+         </a>
+      </div>
 
-      <!-- <nav class="navbar">
-         <a href="../admin/dashboard.php">home</a>
-         <a href="../admin/products.php">Products</a>
-         <a href="../admin/placed_orders.php">orders</a>
-         <a href="../admin/admin_accounts.php">admins</a>
-         <a href="../admin/users_accounts.php">users</a>
-         <a href="../admin/messages.php">messages</a>
-      </nav> -->
+      <div class="header-actions">
+         <a href="../home.php" target="_blank" class="live-site-btn hide-mobile" title="Preview Live Pharmacy Store">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+            <span>View Live Store</span>
+         </a>
 
-      <div class="icons">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="user-btn" class="fas fa-user"></div>
+         <div class="admin-profile-trigger" id="user-btn" title="Admin Account">
+            <div class="avatar-chip">
+               <i class="fas fa-user-shield"></i>
+            </div>
+            <?php
+               $select_profile = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
+               $select_profile->execute([$admin_id]);
+               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <span class="admin-name-preview hide-mobile"><?= htmlspecialchars($fetch_profile['name'] ?? 'Admin'); ?></span>
+            <i class="fas fa-chevron-down caret-icon hide-mobile"></i>
+         </div>
       </div>
 
       <div class="profile">
-         <?php
-            $select_profile = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
-            $select_profile->execute([$admin_id]);
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-         ?>
-         <p><?= $fetch_profile['name']; ?></p>
-         <a href="../admin/update_profile.php" class="btn">Update Profile</a>
-         <div class="flex-btn">
-            <a href="../admin/register_admin.php" class="option-btn">Register</a>
-            <a href="../admin/admin_login.php" class="option-btn">Login</a>
+         <div class="profile-header-card">
+            <div class="admin-avatar-lg">
+               <i class="fas fa-user-shield"></i>
+            </div>
+            <h4 class="admin-display-name"><?= htmlspecialchars($fetch_profile['name'] ?? 'Admin'); ?></h4>
+            <span class="admin-badge-pill"><i class="fas fa-circle-check"></i> System Administrator</span>
          </div>
-         <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
+         
+         <div class="profile-nav-links">
+            <a href="../admin/update_profile.php" class="btn option-btn"><i class="fas fa-user-gear"></i> Update Profile</a>
+            <a href="../admin/register_admin.php" class="btn option-btn"><i class="fas fa-user-plus"></i> Add Admin Staff</a>
+         </div>
+
+         <div class="profile-footer-card">
+            <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('Do you want to log out from Admin Panel?');">
+               <i class="fas fa-arrow-right-from-bracket"></i> Log Out
+            </a> 
+         </div>
       </div>
 
    </section>
 
 </header>
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Left Side Menu</title>
-   <link rel="stylesheet" href="../css/admin_style.css">
-</head>
-<body>
-    <div class="menu">
-        <ul>
-            <li><a href="index.php">home</a></li>
-            <li><a href="contacts.php">Contacts</a></li>
-            <li><a href="about.php">About Us</a></li>
-        </ul>
-    </div>
-</body>
-</html> -->

@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>register admin</title>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <link rel="stylesheet" href="../css/admin_style.css?v=<?php echo time(); ?>">
 
@@ -55,30 +55,53 @@ if(isset($_POST['submit'])){
 
 <?php include '../components/admin_header.php'; ?>
 
-<section class="form-container">
+<section class="form-container" style="min-height: calc(100vh - 8rem);">
 
-   <form action="" method="post">
-      <h3>register now</h3>
-      <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="cpass" required placeholder="confirm your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="register now" class="btn" name="submit">
-   </form>
+   <div class="admin-login-wrapper">
+      <form action="" method="post" class="admin-auth-card">
+         <div class="metric-icon-wrap icon-blue" style="margin: 0 auto 1.5rem auto;">
+            <i class="fas fa-user-plus"></i>
+         </div>
+         <h3>Register New Administrator</h3>
+         <p style="text-align: center; color: var(--text-muted); font-size: 1.35rem; margin-bottom: 2rem;">Add an authorized dispensary staff member</p>
+         
+         <div class="input-field-group">
+            <label for="admin-name">Username</label>
+            <div class="input-with-icon">
+               <i class="fas fa-user"></i>
+               <input type="text" id="admin-name" name="name" required placeholder="Enter new username" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            </div>
+         </div>
+
+         <div class="input-field-group">
+            <label for="admin-pass">Password</label>
+            <div class="input-with-icon">
+               <i class="fas fa-lock"></i>
+               <input type="password" id="admin-pass" name="pass" required placeholder="Enter password" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            </div>
+         </div>
+
+         <div class="input-field-group">
+            <label for="admin-cpass">Confirm Password</label>
+            <div class="input-with-icon">
+               <i class="fas fa-shield-check"></i>
+               <input type="password" id="admin-cpass" name="cpass" required placeholder="Confirm password" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            </div>
+         </div>
+
+         <button type="submit" name="submit" class="btn btn-primary btn-block">
+            <i class="fas fa-user-check"></i> Register Admin Staff
+         </button>
+
+         <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="admin_accounts.php" style="font-size: 1.35rem; color: var(--text-muted);"><i class="fas fa-arrow-left"></i> Back to Staff Directory</a>
+         </div>
+      </form>
+   </div>
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-<script src="../js/admin_script.js"></script>
+<script src="../js/admin_script.js?v=<?php echo time(); ?>"></script>
    
 </body>
 </html>
